@@ -1,0 +1,7 @@
+{
+  "name": "exchangeMulesoft",
+  "groupId": "com.coppel",
+  "assetId": "exchangeMulesoft",
+  "version": "1.0.0",
+  "main": "api/mi-api.raml"
+}
