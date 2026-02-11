@@ -31,6 +31,16 @@ types:
         body:
           application/json:
             type: Cuenta
+  put: 
+    description: Actualizar una cuenta dummy en memoria
+    body:
+      application/json:
+        type: Cuenta
+    responses:
+      200:
+        body:
+          application/json:
+            type: Cuenta
 
 /cuentas/{id}:
   get:
