@@ -4,15 +4,44 @@ version: v1
 baseUri: https://api.coppel.com/exchange-mulesoft
 mediaType: application/json
 
-/hello:
+/types:
+  Cuenta:
+    type: object
+    properties:
+      id: integer
+      numeroCuenta: string
+      titular: string
+      saldo: number
+
+/cuentas:
   get:
-    description: Devuelve un saludo simple.
+    description: Listar todas las cuentas dummy
     responses:
       200:
         body:
           application/json:
-            type: object
-            properties:
-              message: string
-            example:
-              message: "Hello World with Exchange v1.0.1"
+            type: Cuenta[]
+  post:
+    description: Crear una nueva cuenta en memoria
+    body:
+      application/json:
+        type: Cuenta
+    responses:
+      201:
+        body:
+          application/json:
+            type: Cuenta
+
+/cuentas/{id}:
+  get:
+    description: Obtener una cuenta dummy por ID
+    responses:
+      200:
+        body:
+          application/json:
+            type: Cuenta
+  delete:
+    description: Eliminar una cuenta dummy por ID
+    responses:
+      204:
+        description: Cuenta eliminada
