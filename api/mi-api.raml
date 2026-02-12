@@ -50,6 +50,16 @@ types:
         body:
           application/json:
             type: Cuenta
+  put: 
+    description: Actualizar una cuenta dummy por ID
+    body:
+      application/json:
+        type: Cuenta
+    responses:
+      200:
+        body:
+          application/json:
+            type: Cuenta
   delete:
     description: Eliminar una cuenta dummy por ID
     responses:
