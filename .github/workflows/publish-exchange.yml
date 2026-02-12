@@ -23,5 +23,5 @@ jobs:
       - name: Upload to Exchange
         run: |
           anypoint-cli-v4 exchange:asset:upload \
-          --organization ${{ secrets.ORG_ID7 }} \
+          --organization ${{ secrets.ORG_ID }} \
           exchangeMulesoft/1.0.4
