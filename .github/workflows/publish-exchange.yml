@@ -17,11 +17,11 @@ jobs:
       - name: Login with Connected App
         run: |
           anypoint-cli-v4 login \
-          --client_id ${{ secrets.CLIENT_ID }} \
-          --client_secret ${{ secrets.CLIENT_SECRET }}
+          --client_id 555c3bf1d3b540189a30c08791b5e09b \
+          --client_secret 7f7c1e64F5b44Fb29662E91c48597CCf
 
       - name: Upload to Exchange
         run: |
           anypoint-cli-v4 exchange:asset:upload \
-          --organization ${{ secrets.ORG_ID }} \
-          exchangeMulesoft/1.0.4
+          --organization dac59cab-5729-4341-ac22-fcd23d3bd5bd \
+          exchangeMulesoft/1.0.5
