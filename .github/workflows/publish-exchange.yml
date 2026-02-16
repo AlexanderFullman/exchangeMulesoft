@@ -1,14 +1,23 @@
 name: Publish RAML to Exchange
+
 on:
   push:
     branches: [develop]
+
 jobs:
   publish:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
-      - uses: josedagama/mulesoft-exchange-upload@1.0.0
-        with:
-          anypoint-username: ${{ secrets.ANYPOINT_USERNAME }}
-          anypoint-password: ${{ secrets.ANYPOINT_PASSWORD }}
-          anypoint-organization-id: ${{ secrets.ANYPOINT_ORG_ID }}
+
+      - name: Install Anypoint CLI
+        run: npm install -g anypoint-cli-v4
+
+      - name: Upload to Exchange
+        run: |
+          anypoint-cli-v4 exchange:asset:upload \
+            --client_id 555c3bf1d3b540189a30c08791b5e09b \
+            --client_secret 7f7c1e64F5b44Fb29662E91c48597CCf \
+            --organization dac59cab-5729-4341-ac22-fcd23d3bd5bd \
+            exchangeMulesoft/1.0.5
