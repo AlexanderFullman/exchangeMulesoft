@@ -20,4 +20,4 @@ jobs:
             --client_id 36dbcb170660407a9c432dd9a943f29a \
             --client_secret bf4e9A2EC50544abBF33C550438a28d8 \
             --organization d6063010-0be5-4202-bb96-5a6211dc5d2e \
-            exchangeMulesoft/1.0.5
+            exchangeMulesoft/1.0.4
